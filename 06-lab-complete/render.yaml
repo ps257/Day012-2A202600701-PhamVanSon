@@ -8,6 +8,8 @@ services:
     healthCheckPath: /health
     autoDeploy: true
     envVars:
+      - key: PORT
+        value: "8000"
       - key: ENVIRONMENT
         value: production
       - key: APP_VERSION
