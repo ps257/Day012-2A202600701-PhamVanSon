@@ -1,24 +1,22 @@
 # Deployment Information
 
 ## Public URL
-[INSERT_PUBLIC_URL_HERE]
-*(Example: `https://your-agent.railway.app`)*
+https://ai-agent-production-b366.onrender.com
 
 ## Platform
-[INSERT_DEPLOYMENT_PLATFORM_HERE]
-*(Example: Railway / Render / GCP Cloud Run)*
+Render
 
 ## Test Commands
 
 ### Health Check
 ```bash
-curl https://[INSERT_PUBLIC_URL_HERE]/health
+curl https://ai-agent-production-b366.onrender.com/health
 # Expected: {"status": "ok", ...}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://[INSERT_PUBLIC_URL_HERE]/ask \
+curl -X POST https://ai-agent-production-b366.onrender.com/ask \
   -H "X-API-Key: vinuni-secret-key-2026" \
   -H "Content-Type: application/json" \
   -d '{"question": "What is AI?"}'
@@ -27,7 +25,7 @@ curl -X POST https://[INSERT_PUBLIC_URL_HERE]/ask \
 ### Rate Limiting Test
 ```bash
 for i in {1..25}; do 
-  curl -X POST https://[INSERT_PUBLIC_URL_HERE]/ask \
+  curl -X POST https://ai-agent-production-b366.onrender.com/ask \
     -H "X-API-Key: vinuni-secret-key-2026" \
     -H "Content-Type: application/json" \
     -d '{"question": "Test Rate Limit"}'
@@ -44,7 +42,9 @@ done
 - `DAILY_BUDGET_USD` = 5.0
 
 ## Screenshots
-*(Lưu ảnh vào thư mục screenshots/ và chèn link vào đây)*
-- [Deployment dashboard](screenshots/dashboard.png)
-- [Service running](screenshots/running.png)
-- [Test results](screenshots/test.png)
+- **Deployment Dashboard:**
+  ![Deployment Dashboard](image/dashboard.png)
+- **Service Running:**
+  ![Service Running](image/service_running.png)
+- **Test Results:**
+  ![Test Results](image/test_result.png)
