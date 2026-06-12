@@ -1,7 +1,7 @@
 from fastapi import Header, HTTPException, Security
 from .config import settings
 
-def verify_api_key(x_api_key: str = Security(Header(..., alias="X-API-Key"))):
+def verify_api_key(x_api_key: str = Header(..., alias="X-API-Key")):
     """
     Xác thực API Key từ Header `X-API-Key`.
     Trả về 'user_id' giả lập dựa trên API key hợp lệ, hoặc raise 401.
